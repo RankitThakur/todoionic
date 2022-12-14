@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Todo</ion-title>
+    <ion-label
+    slot="end"
+    style="font-weight: 800; font-size: 1em"
+    class="ion-text-center">
+    Time
+    <p style="font-weight: 400;">
+      {{today | date:'fullDate'}}
+    </p>
+  </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let todoList of todos" (click)="openTodo(todoList)">
+      <ion-label>{{todoList.title}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical='bottom' horizontal="end" slot="fixed">
+  <ion-fab-button color="danger" (click)="addTodo()">
+  <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+

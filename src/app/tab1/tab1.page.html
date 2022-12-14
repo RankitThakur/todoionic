@@ -1,0 +1,30 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title color="primary">{{todo.title | uppercase}}</ion-title>
+    <ion-icon
+      name="close"
+      slot="end"
+      size="larger"
+      class="ion-padding"
+      (click)="dismis()"
+    ></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div>
+    <ion-item>
+      <ion-label>Note</ion-label>
+      <ion-textarea [(ngModel)]="todo.text" row="6"></ion-textarea>
+    </ion-item>
+  </div>
+
+  <ion-button expand="block" color="success" (click)="updateTodo()">
+    <ion-icon name="save" slot="start"></ion-icon>
+    Update
+  </ion-button>
+
+  <ion-button expand="block" color="danger" (click)="deleteTodo()">
+    <ion-icon name="trash" slot="start"></ion-icon>
+    Delete
+  </ion-button>
+</ion-content>
